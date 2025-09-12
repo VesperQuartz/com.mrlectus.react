@@ -1,14 +1,26 @@
 import { TanstackDevtools } from "@tanstack/react-devtools";
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import type { QueryClient } from "@tanstack/react-query";
+import {
+  createRootRoute,
+  createRootRouteWithContext,
+  HeadContent,
+  Outlet,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { AsyncProvider } from "@/providers/async";
 import { LoadingProvider } from "@/providers/loader";
 
-export const Route = createRootRoute({
+type RootContext = {
+  auth: any;
+  queryClient: QueryClient;
+};
+
+export const Route = createRootRouteWithContext<RootContext>()({
   component: () => (
     <>
       <AsyncProvider>
         <LoadingProvider>
+          <HeadContent />
           <Outlet />
           <TanstackDevtools
             config={{

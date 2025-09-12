@@ -1,4 +1,9 @@
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import {
+  createRouter,
+  parseSearchWith,
+  RouterProvider,
+  stringifySearchWith,
+} from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
@@ -6,6 +11,7 @@ import ReactDOM from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 
 import "./global.css";
+import { QueryClient } from "@tanstack/react-query";
 import { parse, stringify } from "jsurl2";
 import reportWebVitals from "./reportWebVitals.ts";
 import { useAuthStore } from "./store/index.ts";

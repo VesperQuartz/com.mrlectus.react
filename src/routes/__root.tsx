@@ -1,7 +1,6 @@
 import { TanstackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import {
-  createRootRoute,
   createRootRouteWithContext,
   HeadContent,
   Outlet,
@@ -12,7 +11,7 @@ import { LoadingProvider } from "@/providers/loader";
 
 type RootContext = {
   auth: any;
-  queryClient: QueryClient;
+  queryClient: QueryClient | undefined;
 };
 
 export const Route = createRootRouteWithContext<RootContext>()({

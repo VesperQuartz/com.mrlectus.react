@@ -5,7 +5,7 @@ export const Route = createFileRoute("/(dashboard)")({
     console.log(context, location);
     if (!context.auth) {
       throw redirect({
-        to: "/",
+        to: "/login",
         search: {
           redirect: location.href,
         },

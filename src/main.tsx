@@ -7,11 +7,9 @@ import {
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
-// Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
 import "./global.css";
-import { QueryClient } from "@tanstack/react-query";
 import { parse, stringify } from "jsurl2";
 import reportWebVitals from "./reportWebVitals.ts";
 import { useAuthStore } from "./store/index.ts";
@@ -31,7 +29,6 @@ const router = createRouter({
   defaultPreloadStaleTime: 0,
 });
 
-// Register the router instance for type safety
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
@@ -43,7 +40,6 @@ const InnerRouter = () => {
   return <RouterProvider router={router} context={{ auth: auth.token }} />;
 };
 
-// Render the app
 const rootElement = document.getElementById("app");
 if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
@@ -54,7 +50,4 @@ if (rootElement && !rootElement.innerHTML) {
   );
 }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.log);

@@ -5,5 +5,5 @@ export const Route = createFileRoute("/(dashboard)/")({
 });
 
 function App() {
-  return <div className="text-center">Index</div>;
+  return <div className="text-center bg-red-400">Index</div>;
 }

@@ -12,7 +12,11 @@ export default defineConfig({
   },
   plugins: [
     tanstackRouter({ autoCodeSplitting: true, target: "react" }),
-    viteReact(),
+    viteReact({
+      babel: {
+        plugins: [["babel-plugin-react-compiler", { target: "19" }]],
+      },
+    }),
     tailwindcss(),
     devtools({
       removeDevtoolsOnBuild: true,

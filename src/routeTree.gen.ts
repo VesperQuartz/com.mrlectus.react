@@ -59,8 +59,8 @@ declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/(dashboard)': {
       id: '/(dashboard)'
-      path: '/'
-      fullPath: '/'
+      path: ''
+      fullPath: ''
       preLoaderRoute: typeof dashboardRouteRouteImport
       parentRoute: typeof rootRouteImport
     }

@@ -1,4 +1,5 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { formDevtoolsPlugin } from "@tanstack/react-form-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
 import {
@@ -25,6 +26,7 @@ export const Route = createRootRouteWithContext<RootContext>()({
           <TanStackDevtools
             config={{
               position: "bottom-left",
+              openHotkey: ["Meta", "Shift", "O"],
             }}
             plugins={[
               {
@@ -35,6 +37,7 @@ export const Route = createRootRouteWithContext<RootContext>()({
                 name: "React Query",
                 render: <ReactQueryDevtoolsPanel />,
               },
+              formDevtoolsPlugin(),
             ]}
           />
         </LoadingProvider>

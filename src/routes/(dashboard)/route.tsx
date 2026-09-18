@@ -1,5 +1,7 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { SmoothCursor } from "@/components/Cursor/SmoothCursor";
 import { Navigation } from "@/components/Portfolio/Navigation";
+import { personalInfo } from "@/data/portfolio";
 
 export const Route = createFileRoute("/(dashboard)")({
   component: DashboardLayout,
@@ -7,18 +9,24 @@ export const Route = createFileRoute("/(dashboard)")({
 
 function DashboardLayout() {
   return (
-    <div className="min-h-screen w-full py-8 px-4 flex flex-col items-center justify-start bg-page-background text-foreground transition-colors duration-300">
+    <div className="flex min-h-screen w-full flex-col bg-page-background text-foreground transition-colors duration-300">
+      <SmoothCursor />
       <Navigation />
 
-      <main className="w-full max-w-[680px] bg-background rounded-[32px] border border-border p-6 md:p-8 shadow-2xl mt-20 mb-12 relative overflow-hidden min-h-[60vh] transition-colors duration-300">
+      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-16 md:py-24">
         <Outlet />
       </main>
 
-      <footer className="text-center text-sm text-muted-foreground pb-8">
-        <p>© 2024 {new Date().getFullYear()} Subtle Folio – Framer Template</p>
-        <p className="text-xs opacity-60 mt-2">
-          by Waheed {/* MorvaLabs // Framer */}
-        </p>
+      <footer className="border-t border-border">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-2 px-6 py-8 text-sm text-muted-foreground sm:flex-row">
+          <span>
+            © {new Date().getFullYear()} {personalInfo.name}
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            Available for work
+          </span>
+        </div>
       </footer>
     </div>
   );

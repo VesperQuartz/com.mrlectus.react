@@ -165,10 +165,16 @@ export const skills = {
 export const personalInfo = {
   name: "Waheed",
   title: "Full Stack Developer",
+  tagline: "I build web and blockchain products end to end.",
   bio: "Passionate full-stack developer with expertise in blockchain technologies, fintech solutions, and modern web applications. I specialize in building scalable, user-focused applications that solve real-world problems.",
+  about: [
+    "I'm a full-stack developer based in Nigeria. Over the last five years I've shipped products in blockchain, fintech, and healthcare from smart contracts and backend APIs through to the interfaces people use every day.",
+    "I care about small, well-tested systems and interfaces that stay out of the way. Most of my day is TypeScript, React, and Node, with smart contracts in Solidity and Move.",
+  ],
   location: "Nigeria",
   email: "waheedjimoh444@gmail.com",
   linkedin: "https://www.linkedin.com/in/abdulwaheed-j-64561494",
   github: "https://github.com/VesperQuartz",
   twitter: "https://twitter.com/mrlectus",
+  cvUrl: "https://cfhono.mrlectus.online/jimoh1.pdf",
 };
